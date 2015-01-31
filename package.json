@@ -1,0 +1,10 @@
+{
+	"name" : "wordify",
+	"version" : "0.0.1",
+	"dependencies" : {
+	},
+	"devDependencies": {
+		"mocha": "*",
+		"chai": "*"
+	}
+}
