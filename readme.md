@@ -30,6 +30,27 @@ Returns:
 3
 ```
 
+##listDetails
+
+Returns an object with words and occurrances
+
+```
+var words = wordify.listDetails("the the the the man man man sat on the the the cat cat cat cat");
+```
+
+Returns:
+
+```
+{
+	the: { count: 7 }, 
+	man: { count: 3 }, 
+	sat: { count: 1 }, 
+	on: { count: 1 }, 
+	cat: { count: 4 }
+}
+```
+
+
 ##charCount
 
 Returns the length of characters in a string. It strips out html and punctuation marks.
