@@ -100,13 +100,38 @@ Returns an array of words. HTML and punctuation marks are removed.
 */
 exports.list = function (copy) {
 
-    var strArr = [], uniqueArr = [];
-
     if (typeof copy !== "string" || copy.length === 0) {
-        return strArr;
+        return [];
     }
 
     //remove html, then remove anything other than a-z characters, convert to array, get rid of duplicates and sort alphabetically
     return stripString(copy).split(" ").filter(unique).sort();
+
+}
+
+/*
+Returns an array of objects containing the word and count. HTML and punctuation marks are removed.
+@param copy [string]
+@returns [object]
+*/
+exports.listDetails = function (copy) {
+
+    var wordlist = {}, i, wordArray;
+
+    if (typeof copy !== "string" || copy.length === 0) {
+        return wordlist;
+    }
+
+    wordArray = stripString(copy).split(" ");
+
+    for(i = 0; i < wordArray.length; i = i + 1) {
+        if (wordlist.hasOwnProperty(wordArray[i])) {
+            wordlist[wordArray[i]].count +=  1;
+        } else {
+            wordlist[wordArray[i]] = { count : 1 };
+        }
+    }
+
+    return wordlist;
 
 }

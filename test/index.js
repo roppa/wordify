@@ -72,3 +72,15 @@ describe("list", function () {
 	});
 
 });
+
+describe("listDetails", function () {
+
+	it("String should return return an object", function () {
+		expect(wordify.listDetails("the the the the man man man sat on the the the cat cat cat cat")).be.an("object");
+	});
+
+	it("String should return unique index", function () {
+		expect(wordify.listDetails("the the the the man man man sat on the the the cat cat cat cat")).to.deep.equal({ the: { count: 7 }, man: { count: 3 }, sat: { count: 1 }, on: { count: 1 }, cat: { count: 4 } });
+	});
+
+});
