@@ -71,16 +71,41 @@ describe("list", function () {
 		expect(wordify.list("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed rutrum porta leo eget euismod. Sed eleifend arcu sed blandit euismod. Nam sed adipiscing eros, quis mattis urna. In a dolor eu est tempor commodo. Nunc tristique metus sit amet tortor molestie congue. Nulla consectetur mi justo, eu ultricies felis volutpat at. Vivamus facilisis enim nec posuere volutpat")).be.an("array");
 	});
 
+	it("should return an array of unique words", function () {
+		expect(wordify.list("List of words to make unique. Returns array with lots of words. Did I say lots of words?")).to.include("array", "did", "i", "list", "lots", "make", "of", "returns", "say", "to", "unique", "with", "words");
+	});
+
 });
 
-describe("listDetails", function () {
+describe("stats", function () {
 
 	it("String should return return an object", function () {
-		expect(wordify.listDetails("the the the the man man man sat on the the the cat cat cat cat")).be.an("object");
+		expect(wordify.stats("the the the the man man man sat on the the the cat cat cat cat")).be.an("object");
 	});
 
 	it("String should return unique index", function () {
-		expect(wordify.listDetails("the the the the man man man sat on the the the cat cat cat cat")).to.deep.equal({ the: { count: 7 }, man: { count: 3 }, sat: { count: 1 }, on: { count: 1 }, cat: { count: 4 } });
+		expect(wordify.stats("the the the the man man man sat on the the the cat cat cat cat")).to.deep.equal({ the: { count: 7 }, man: { count: 3 }, sat: { count: 1 }, on: { count: 1 }, cat: { count: 4 } });
+	});
+
+});
+
+describe("chunk", function () {
+
+
+	it("String should return an empty array with invalid string", function () {
+		expect(wordify.chunk(null, 2)).be.an("array");
+	});
+
+	it("String should return an array when using an invalid string", function () {
+		expect(wordify.chunk("", 2)).be.an("array");
+	});
+
+	it("String should return return an array of strings of specified length", function () {
+		expect(wordify.chunk("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed rutrum porta leo eget euismod. Sed eleifend arcu sed blandit euismod. Nam sed adipiscing eros, quis mattis urna. In a dolor eu est tempor commodo. Nunc tristique metus sit amet tortor molestie congue. Nulla consectetur mi justo, eu ultricies felis volutpat at. Vivamus facilisis enim nec posuere volutpat", 2)).be.an("array");
+	});
+
+	it("Should return array of 2 elements", function () {
+		expect(wordify.chunk("this should be in first element, this should be in second element", 6).length).equal(2);
 	});
 
 });

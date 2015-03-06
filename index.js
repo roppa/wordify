@@ -114,7 +114,7 @@ Returns an array of objects containing the word and count. HTML and punctuation 
 @param copy [string]
 @returns [object]
 */
-exports.listDetails = function (copy) {
+exports.stats = function (copy) {
 
     var wordlist = {}, i, wordArray;
 
@@ -134,4 +134,24 @@ exports.listDetails = function (copy) {
 
     return wordlist;
 
+}
+
+/*
+Returns an array of words in numbers specified
+@param copy [string]
+@param chunkSize [int]
+@returns [object]
+*/
+exports.chunk = function (copy, chunkSize) {
+
+    var regex;
+
+    if (typeof copy !== "string" || copy.length === 0 || typeof chunkSize !== "number") {
+        return [];
+    }
+
+    regex = new RegExp("(\\S+)(\\s+\\S+){0," + (chunkSize - 1) + "}", "g");
+
+    return copy.match(regex);
+    
 }
