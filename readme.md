@@ -1,6 +1,6 @@
 #Wordify
 
-A set of utilities for authors to get meta data from content.
+A set of utilities for authors to get meta data from content and generally to play with words.
 
 ##Usage
 

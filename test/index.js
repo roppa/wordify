@@ -1,4 +1,4 @@
-var wordify = require("../index"),
+var wordify = require("../wordify"),
 	expect = require('chai').expect;
 
 describe("count", function() {
