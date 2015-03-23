@@ -43,6 +43,10 @@ describe("charCount", function () {
 		expect(wordify.charCount("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed rutrum porta leo eget euismod. Sed eleifend arcu sed blandit euismod. Nam sed adipiscing eros, quis mattis urna. In a dolor eu est tempor commodo. Nunc tristique metus sit amet tortor molestie congue. Nulla consectetur mi justo, eu ultricies felis volutpat at. Vivamus facilisis enim nec posuere volutpat")).to.equal(355);
 	});
 
+	it("Lorem ipsum string with html should return correct character count", function () {
+		expect(wordify.charCount("<p><b>Lorem ipsum dolor sit amet</b>, consectetur adipiscing elit. Sed rutrum porta leo eget euismod. Sed eleifend arcu sed blandit euismod. Nam sed adipiscing eros, quis mattis urna. In a dolor eu est tempor commodo. Nunc tristique metus sit amet tortor molestie congue. Nulla consectetur mi justo, eu ultricies felis volutpat at. Vivamus facilisis enim nec posuere volutpat</p>")).to.equal(355);
+	});
+
 });
 
 describe("charCountWithCharacters", function () {
@@ -109,3 +113,30 @@ describe("chunk", function () {
 	});
 
 });
+
+describe("wave", function () {
+    
+	it("Invalid params should return empty array", function () {
+		expect(wordify.wave()).be.an("array");
+	});
+
+	it("Invalid params should return empty array", function () {
+		expect(wordify.wave("Lorem ipsum")).be.an("array");
+	});
+
+	it("Invalid array should still return an array", function () {
+		expect(wordify.wave("Lorem ipsum", [1, "test", 2])).be.an("array");
+	});
+
+	it("Lorem ipsum string should return an array", function () {
+		expect(wordify.wave("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed rutrum porta leo eget euismod. Sed eleifend arcu sed blandit euismod. Nam sed adipiscing eros, quis mattis urna. In a dolor eu est tempor commodo. Nunc tristique metus sit amet tortor molestie congue. Nulla consectetur mi justo, eu ultricies felis volutpat at. Vivamus facilisis enim nec posuere volutpat", [5, 20, 40, 60])).be.an("array");
+	});
+
+	it("Wave array should have a lenght of 11", function () {
+		expect(wordify.wave("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed rutrum porta leo eget euismod. Sed eleifend arcu sed blandit euismod. Nam sed adipiscing eros, quis mattis urna. In a dolor eu est tempor commodo. Nunc tristique metus sit amet tortor molestie congue. Nulla consectetur mi justo, eu ultricies felis volutpat at. Vivamus facilisis enim nec posuere volutpat", [5, 20, 40, 60]).length).equal(11);
+	});
+
+});
+
+
+

@@ -55,6 +55,17 @@ Returns:
 ```
 ["this should be in first element,", "this should be in second element"]
 ```
+##wave
+
+Break copy up in varying lengths forming a "wave". Lengths are characters to break into chunks at lengths specified. The length is used to find the closest space. Sizes go up, and then down, and repeated.
+
+```
+wordify.wave("the cat sat on the mat. The cat sat on the mat", [3, 5, 10])
+```
+Returns:
+```
+["the", "cat sat", "on the mat"]
+```
 
 ##count
 
