@@ -7,5 +7,9 @@
 	"devDependencies": {
 		"mocha": "*",
 		"chai": "*"
+	},
+	"scripts": {
+	    "test": "npm run test-node",
+	    "test-node": "mocha -R spec ./test/index.js"
 	}
 }
