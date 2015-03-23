@@ -2,6 +2,8 @@
 
 A set of utilities for authors to get meta data from content and generally to play with words.
 
+![Build status](https://api.travis-ci.org/roppa/wordify.svg?branch=master "Build status")
+
 ##Usage
 
 ```
