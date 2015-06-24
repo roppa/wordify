@@ -89,7 +89,7 @@
     * @param copy [string]
     * @returns [number]
     */
-    wordify.charCountWithCharacters = function (copy) {
+    wordify.charCountPunctuated = function (copy) {
 
         if (typeof copy !== "string" || copy.length === 0) {
             return 0;

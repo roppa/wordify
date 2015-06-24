@@ -49,22 +49,22 @@ describe("charCount", function () {
 
 });
 
-describe("charCountWithCharacters", function () {
+describe("charCountPunctuated", function () {
 	
 	it('empty string should return 0', function() {
-		expect(wordify.charCountWithCharacters("")).to.equal(0);
+		expect(wordify.charCountPunctuated("")).to.equal(0);
 	});
 
 	it('invalid string should return 0', function() {
-		expect(wordify.charCountWithCharacters()).to.equal(0);
+		expect(wordify.charCountPunctuated()).to.equal(0);
 	});
 
 	it('null should return 0', function() {
-		expect(wordify.charCountWithCharacters(null)).to.equal(0);
+		expect(wordify.charCountPunctuated(null)).to.equal(0);
 	});
 
 	it("Lorem ipsum string should return correct character count", function () {
-		expect(wordify.charCountWithCharacters("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed rutrum porta leo eget euismod. Sed eleifend arcu sed blandit euismod. Nam sed adipiscing eros, quis mattis urna. In a dolor eu est tempor commodo. Nunc tristique metus sit amet tortor molestie congue. Nulla consectetur mi justo, eu ultricies felis volutpat at. Vivamus facilisis enim nec posuere volutpat")).to.equal(365);
+		expect(wordify.charCountPunctuated("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed rutrum porta leo eget euismod. Sed eleifend arcu sed blandit euismod. Nam sed adipiscing eros, quis mattis urna. In a dolor eu est tempor commodo. Nunc tristique metus sit amet tortor molestie congue. Nulla consectetur mi justo, eu ultricies felis volutpat at. Vivamus facilisis enim nec posuere volutpat")).to.equal(365);
 	});
 
 });
