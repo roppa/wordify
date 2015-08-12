@@ -1,15 +1,33 @@
 {
-	"name" : "wordify",
-	"main" : "wordify.js",
-	"version" : "0.0.1",
-	"dependencies" : {
-	},
-	"devDependencies": {
-		"mocha": "*",
-		"chai": "*"
-	},
-	"scripts": {
-	    "test": "npm run test-node",
-	    "test-node": "mocha -R spec ./test/index.js"
-	}
+  "name": "wordify",
+  "main": "wordify.js",
+  "version": "0.0.1",
+  "dependencies": {},
+  "devDependencies": {
+    "mocha": "*",
+    "chai": "*"
+  },
+  "scripts": {
+    "test": "npm run test-node",
+    "test-node": "mocha -R spec ./test/index.js"
+  },
+  "description": "A set of utilities for authors to get meta data from content and generally to play with words.",
+  "directories": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/roppa/wordify.git"
+  },
+  "keywords": [
+    "words",
+    "word",
+    "count"
+  ],
+  "author": "Mark Robson <mark.o.robson@gmail.com> (http://digioli.co.uk)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/roppa/wordify/issues"
+  },
+  "homepage": "https://github.com/roppa/wordify#readme"
 }
