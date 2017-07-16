@@ -69,7 +69,7 @@ describe('list', function () {
   });
 
   it('should return an array of unique words', function () {
-    expect(wordify.list('List of words to make unique. Returns array with lots of words. Did I say lots of words?')).to.include('array', 'did', 'i', 'list', 'lots', 'make', 'of', 'returns', 'say', 'to', 'unique', 'with', 'words');
+    expect(wordify.list('List of words to    make \n\n\n unique. Returns array with lots of words. Did I say lots of words?')).to.include('array', 'did', 'i', 'list', 'lots', 'make', 'of', 'returns', 'say', 'to', 'unique', 'with', 'words');
   });
 });
 

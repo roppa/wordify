@@ -35,10 +35,9 @@
     * @returns {string}
     */
     function stripString(copy) {
-
-        copy = copy.toLowerCase().replace(/<(?:.|\n)*?>/gm, " ");
-        copy = copy.replace(/[^a-z\d\s:]/g, "");
-        copy = copy.replace(/\s{2,}/g, " ");
+        copy = copy.toLowerCase().replace(/<(?:.|\n|\r)*?>/gm, " ");
+        copy = copy.replace(/[^\w]/gm, " ");
+        copy = copy.replace(/\s{2,}/gm, " ");
         copy = copy.trim();
         return copy;
     }
@@ -56,7 +55,7 @@
             return 0;
         }
 
-        //remove all html, then remove all 
+        //remove all html, then remove all
         strArr = stripString(copy).split(" ");
 
         //get rid of any invalid entries
