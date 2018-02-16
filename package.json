@@ -8,8 +8,8 @@
     "chai": "*"
   },
   "scripts": {
-    "test": "npm run test-node",
-    "test-node": "mocha -R spec ./test/index.js"
+    "test": "mocha -R spec ./test/index.js",
+    "prepublish": "npm test && ./publish-dep.sh"
   },
   "description": "A set of utilities for authors to get meta data from content and generally to play with words.",
   "directories": {
