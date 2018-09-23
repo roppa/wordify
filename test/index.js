@@ -28,7 +28,7 @@ describe('charCount', function () {
     expect(wordify.charCount('')).to.equal(0);
   });
 
-  it('invalid string should return 0', function () {
+  it('invalid string should throw', function () {
     expect(wordify.charCount()).to.equal(0);
   });
 
@@ -69,15 +69,11 @@ describe('list', function () {
   });
 
   it('should return an array of unique words', function () {
-    expect(wordify.list('List of words to    make \n\n\n unique. Returns array with lots of words. Did I say lots of words?')).to.include('array', 'did', 'i', 'list', 'lots', 'make', 'of', 'returns', 'say', 'to', 'unique', 'with', 'words');
+    expect(wordify.list('List of    words to     make \n\n\n unique. Returns array with lots of words. Did I say lots of words?')).to.include('array', 'did', 'i', 'list', 'lots', 'make', 'of', 'returns', 'say', 'to', 'unique', 'with', 'words');
   });
 });
 
 describe('stats', function () {
-  it('String should return return an object', function () {
-    expect(wordify.stats('the the the the man man man sat on the the the cat cat cat cat')).be.an('object');
-  });
-
   it('String should return unique index', function () {
     expect(wordify.stats('the the the the man man man sat on the the the cat cat cat cat')).to.deep.equal({ the: { count: 7 }, man: { count: 3 }, sat: { count: 1 }, on: { count: 1 }, cat: { count: 4 } });
   });
