@@ -8,16 +8,11 @@
     "chai": "*"
   },
   "scripts": {
-<<<<<<< HEAD
     "test": "mocha -R spec ./test/index.js",
-    "prepublish": "npm test && ./publish-dep.sh"
-=======
-    "test": "npm run test-node",
-    "test-node": "mocha -R spec ./test/index.js",
+    "prepublish": "npm test && ./publish-dep.sh",
     "preversion": "npm test",
     "version": "git add -A .",
     "postversion": "git push && git push --tags && rm -rf build/temp"
->>>>>>> fix: line breaks and tabs
   },
   "description": "A set of utilities for authors to get meta data from content and generally to play with words.",
   "directories": {
