@@ -9,10 +9,7 @@
   },
   "scripts": {
     "test": "mocha -R spec ./test/index.js",
-    "prepublish": "npm test && ./publish-dep.sh",
-    "preversion": "npm test",
-    "version": "git add -A .",
-    "postversion": "git push && git push --tags && rm -rf build/temp"
+    "prepublish": "npm test && ./publish-dep.sh"
   },
   "description": "A set of utilities for authors to get meta data from content and generally to play with words.",
   "directories": {
