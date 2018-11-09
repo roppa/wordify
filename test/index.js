@@ -73,6 +73,12 @@ describe('list', function () {
   });
 });
 
+describe('list punctuated', function () {
+  it('should handle apostrophes and hyphens', function () {
+    expect(wordify.stats('don\'t you forget about-me don\'t don\'t don\'t')).to.deep.equal({ 'don\'t': { count: 4 }, you: { count: 1 }, forget: { count: 1 }, 'about-me': { count: 1 } })
+  });
+});
+
 describe('stats', function () {
   it('String should return unique index', function () {
     expect(wordify.stats('the the the the man man man sat on the the the cat cat cat cat')).to.deep.equal({ the: { count: 7 }, man: { count: 3 }, sat: { count: 1 }, on: { count: 1 }, cat: { count: 4 } });

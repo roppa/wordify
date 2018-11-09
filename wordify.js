@@ -25,7 +25,7 @@
   */
   function stripString(copy) {
     copy = copy.toLowerCase().replace(/<(?:.|\n|\r)*?>/gm, ' ');
-    copy = copy.replace(/[^\w]/gm, ' ');
+    copy = copy.replace(/[^\w'-]+/gm, ' ');    
     copy = copy.replace(/\s{2,}/gm, ' ');
     copy = copy.trim();
     return copy;
@@ -95,7 +95,7 @@
     var i;
     var wordArray;
     if (typeof copy !== 'string' || copy.length === 0) {
-      return wordlist;
+      return {};
     }
 
     wordArray = stripString(copy).split(' ');
