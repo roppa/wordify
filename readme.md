@@ -87,6 +87,6 @@ Returns:
 
 Returns the length of characters in a string. It strips out html and punctuation marks.
 
-## charCountWithCharacters
+## charCountPunctuated
 
 Returns the length of characters in a string including punctuation marks.
